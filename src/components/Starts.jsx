@@ -1,19 +1,19 @@
 
-export default function Starts({reces, DID}) {
+export default function Starts({races, DID}) {
 
     return (
         <>
         
         {
-          reces.map(det =>(
+          races.map(det =>(
             det.starts.map(staD=>{
           return det.id == DID ?
           <div id={'accordion2' + det.id} key={"b" + staD.number}>
               <div className="card"  >
                 <div className="card-header">
                   <a className="btn" data-bs-toggle="collapse" href={'#collapse' + det.id + staD.number}>
-                  {staD.number} - Horse name: {staD.horse.name} - 
-                  Driver name: {staD.driver.firstName}  {staD.driver.lastName}
+                  {staD.number} - Horse name: <span className='color1'>{staD.horse.name}</span> - 
+                  Driver name: <span className='color1'>{staD.driver.firstName}  {staD.driver.lastName}</span>
                   </a>
                 </div>
                 <div id={'collapse' + det.id + staD.number} className="collapse" data-bs-parent={'#accordion2' + det.id + staD.number}>

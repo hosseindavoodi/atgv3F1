@@ -22,7 +22,7 @@ export default function Results({dataset}) {
               </div>
               <div id={'collapse' + maininfo.id} className="collapse" data-bs-parent="#accordion">
                 <div className="card-body">
-                <Races RecesID = {maininfo.id}  />
+                <Races RacesID = {maininfo.id}  />
                 </div>
               </div>
             </div>

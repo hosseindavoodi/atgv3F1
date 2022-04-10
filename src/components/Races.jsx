@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import {FetchDataDetail} from './Functions'
 import Starts from './Starts';
 import {Rtime} from './Functions'
 
-export default function Reces({RecesID}) {
+export default function Reces({RacesID}) {
 
-    const [reces, setReces] = useState([])
-    const FetchDataDetail1 = async () => {
-    const DReces = await fetch("https://www.atg.se/services/racinginfo/v1/api/games/" + RecesID);
-    const responseD1 = await DReces.json();
-    setReces(responseD1.races)
-    }
+    const [races, setRaces] = useState([])
     
     useEffect(()=>{
-      FetchDataDetail1();
+      FetchDataDetail(setRaces, RacesID);
     },[])
 
 
@@ -20,7 +16,7 @@ export default function Reces({RecesID}) {
         <>
 <div id="accordion1">
         {
-          reces.map(det =>(
+          races.map(det =>(
           
             <div className="card" key={det.id}>
               <div className="card-header card2A">
@@ -31,7 +27,7 @@ export default function Reces({RecesID}) {
               </div>
               <div id={'collapse' + det.id} className="collapse" data-bs-parent="#accordion1">
                 <div className="card-body">
-                <Starts reces = {reces} DID = {det.id} />
+                <Starts races = {races} DID = {det.id} />
                 </div>
               </div>
             </div>
