@@ -2,7 +2,7 @@ This projecet is made by React hooks, javascript, sass and Jest(unit test) also 
 
 Also bootstrap.bundle.min.js cdn link is added in index.html
 
-To run please copy files on the local folder and run this commands:
+Please copy files on the local folder and run these commands:
 
 ### `npm install`
 
