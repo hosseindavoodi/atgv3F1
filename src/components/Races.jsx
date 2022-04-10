@@ -3,6 +3,8 @@ import {FetchDataDetail} from './Functions'
 import Starts from './Starts';
 import {Rtime} from './Functions'
 
+// Races list is created here by fetcheing from second Api 
+
 export default function Reces({RacesID}) {
 
     const [races, setRaces] = useState([])
@@ -21,7 +23,14 @@ export default function Reces({RacesID}) {
             <div className="card" key={det.id}>
               <div className="card-header card2A">
                 <a className="col-12 btn" data-bs-toggle="collapse" href={'#collapse' + det.id}>
-                <div className='float-left bold'>{det.number} - Race name: <span className='color1'>{det.name}</span></div> 
+                <div className='float-left '>{det.number} -  
+                  {
+                  // Some Race does not include Name field
+                  det.name == null? " (Race name does not exist !!)" :
+                  <>Race name: <span className='color1 bold'> {det.name}</span></>
+                   
+                  }
+                  </div> 
                 <div className='divA23 float-right'>{Rtime(det.startTime)}</div>
                 </a>
               </div>

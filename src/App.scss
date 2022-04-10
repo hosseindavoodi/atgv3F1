@@ -64,6 +64,9 @@ body {
 .color1 {
   color: $hilighttexts;
 }
+.react-tabs__tab:focus:after {
+  background: none !important;
+}
 
 @media (max-width: 768px) {
 }

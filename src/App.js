@@ -6,7 +6,6 @@ import Results from './components/Results';
 import {FetchData} from './components/Functions';
 
 
-
 export default function App() {
 const [resultsV75, setResultsV75] = useState([]);
 const [resultsV86, setResultsV86] = useState([]);

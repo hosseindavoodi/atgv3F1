@@ -1,4 +1,6 @@
 
+// Starts list and horse data detail is created here by passing data from Races.js
+
 export default function Starts({races, DID}) {
 
     return (
