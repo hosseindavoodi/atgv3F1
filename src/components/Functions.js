@@ -17,18 +17,18 @@ export const Rdate = (Timedate) => {
 
 
 // fetch results data 
-var url = "https://www.atg.se/services/racinginfo/v1/api/products/"
+//var url = "https://www.atg.se/services/racinginfo/v1/api/products/"
 
-export const FetchData = async (set1, set2, set3) => {
-    const D1 = await fetch(url + "V75");
-    const D2 = await fetch(url + "V86");
-    const D3 = await fetch(url + "GS75");
-    const response1 = await D1.json();
-    const response2 = await D2.json();
-    const response3 = await D3.json();
-    set1(response1.results)
-    set2(response2.results)
-    set3(response3.results)
+export const FetchData = async (setV75, setV86, setGS75) => {
+    const DV75 = await fetch("./V75.json");
+    const DV86 = await fetch("./V86.json");
+    const DGS75 = await fetch("./GS75.json");
+    const responseDV75 = await DV75.json();
+    const responseDV86 = await DV86.json();
+    const responseDGS75 = await DGS75.json();
+    setV75(responseDV75.results)
+    setV86(responseDV86.results)
+    setGS75(responseDGS75.results)
     }
 
     
@@ -38,3 +38,50 @@ export const FetchDataDetail = async (setRaces, RacesID) => {
     const responseD1 = await DRaces.json();
     setRaces(responseD1.races)
     }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

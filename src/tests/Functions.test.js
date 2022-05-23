@@ -18,7 +18,7 @@ it('it should give the time', ()=>{
  it('first fetch test', async () => {
   const res = await fetch('https://www.atg.se/services/racinginfo/v1/api/products/V75');
   const result = await res.json();
-  expect(result.results[0].tracks[0].name).toBe("Jägersro");  
+  expect(result.results[0].tracks[0].name).toBe("Gävle");  
 });
 
 it('second fetch test', async () => {
