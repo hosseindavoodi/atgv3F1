@@ -19,16 +19,39 @@ export const Rdate = (Timedate) => {
 // fetch results data 
 //var url = "https://www.atg.se/services/racinginfo/v1/api/products/"
 
-export const FetchData = async (setV75, setV86, setGS75) => {
-    const DV75 = await fetch("./V75.json");
-    const DV86 = await fetch("./V86.json");
-    const DGS75 = await fetch("./GS75.json");
-    const responseDV75 = await DV75.json();
-    const responseDV86 = await DV86.json();
-    const responseDGS75 = await DGS75.json();
-    setV75(responseDV75.results)
-    setV86(responseDV86.results)
-    setGS75(responseDGS75.results)
+export const FetchDataV75 = async (setV75) => {
+        try {
+        const DV75 = await fetch("./V75.json");
+        const responseDV75 = await DV75.json();
+        setV75(responseDV75.results)
+        }   
+        catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+export const FetchDataV86 = async (setV86) => {
+        try {
+        const DV86 = await fetch("./V86.json");
+        const responseDV86 = await DV86.json();
+        setV86(responseDV86.results)
+        }   
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+
+export const FetchDataGS75 = async (setGS75) => {
+        try {
+        const DGS75 = await fetch("./GS75.json");
+        const responseDGS75 = await DGS75.json();
+        setGS75(responseDGS75.results)
+        }   
+        catch (error) {
+            console.log(error)
+        }
     }
 
     

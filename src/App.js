@@ -3,7 +3,7 @@ import { Tab, Tabs as TabsComponent, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./App.scss";
 import Results from './components/Results';
-import {FetchData} from './components/Functions';
+import {FetchDataV75, FetchDataV86, FetchDataGS75} from './components/Functions';
 
 
 export default function App() {
@@ -12,8 +12,9 @@ const [resultsV86, setResultsV86] = useState([]);
 const [resultsGS75, setResultsGS75] = useState([]);
 
 useEffect(()=>{
-  FetchData(setResultsV75, setResultsV86, setResultsGS75);
-
+  FetchDataV75(setResultsV75);
+  FetchDataV86(setResultsV86);
+  FetchDataGS75(setResultsGS75);
 },[])
 
 
