@@ -10,11 +10,15 @@ export default function App() {
 const [resultsV75, setResultsV75] = useState([]);
 const [resultsV86, setResultsV86] = useState([]);
 const [resultsGS75, setResultsGS75] = useState([]);
+const [errorV75, setErrorV75] = useState(false)
+const [errorV86, setErrorV86] = useState(false)
+const [errorGS75, setErrorGS75] = useState(false)
+
 
 useEffect(()=>{
-  FetchDataV75(setResultsV75);
-  FetchDataV86(setResultsV86);
-  FetchDataGS75(setResultsGS75);
+  FetchDataV75(setResultsV75, setErrorV75);
+  FetchDataV86(setResultsV86, setErrorV86);
+  FetchDataGS75(setResultsGS75, setErrorGS75);
 },[])
 
 
@@ -28,13 +32,13 @@ useEffect(()=>{
     </TabList>
     
       <TabPanel>
-        <Results dataset={resultsGS75} />
+        <Results dataset={resultsGS75} error = {errorGS75}/>
       </TabPanel>
       <TabPanel>
-        <Results dataset={resultsV86} />
+        <Results dataset={resultsV86}  error = {errorV86}/>
       </TabPanel>
       <TabPanel>
-        <Results dataset={resultsV75} />
+        <Results dataset={resultsV75}  error = {errorV75} />
       </TabPanel>
       
   </TabsComponent>

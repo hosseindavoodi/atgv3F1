@@ -5,13 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Results list is created here by fetcheing from Api in App.js and passed here
 
-export default function Results({dataset}) {
-
-
+export default function Results({dataset, error}) {
+  
   return (
     <>
     <div id="accordion">
     {
+      error ? <p>there is an error</p>
+      :
       dataset.map(maininfo =>(
         <div className="card" key={maininfo.id}>
           <div className="card-header">

@@ -17,49 +17,54 @@ export const Rdate = (Timedate) => {
 
 
 // fetch results data 
-//var url = "https://www.atg.se/services/racinginfo/v1/api/products/"
+//var url = "https://www.atg.se/services/racinginfo/v1/api/products/V75"
 
-export const FetchDataV75 = async (setV75) => {
+export const FetchDataV75 = async (setV75, setErrorV75) => {
         try {
         const DV75 = await fetch("./V75.json");
-        const responseDV75 = await DV75.json();
-        setV75(responseDV75.results)
+            if (DV75.status === 200) {
+                const responseDV75 = await DV75.json();
+                setV75(responseDV75.results)
+            }
         }   
         catch (error) {
-            console.log(error);
-            
+            setErrorV75(true)
         }
     }
 
-export const FetchDataV86 = async (setV86) => {
+export const FetchDataV86 = async (setV86, setErrorV86) => {
         try {
-        const DV86 = await fetch("./V86.json");
-        const responseDV86 = await DV86.json();
-        setV86(responseDV86.results)
+            const DV86 = await fetch("./V86.json");
+            if (DV86.status === 200) {
+                const responseDV86 = await DV86.json();
+                setV86(responseDV86.results)
+            }
         }   
         catch (error) {
-            console.log(error)
+            setErrorV86(true)
         }
     }
 
 
-export const FetchDataGS75 = async (setGS75) => {
+export const FetchDataGS75 = async (setGS75, setErrorGS75) => {
         try {
-        const DGS75 = await fetch("./GS75.json");
-        const responseDGS75 = await DGS75.json();
-        setGS75(responseDGS75.results)
+                const DGS75 = await fetch("./GS75.json");
+            if (DGS75.status === 200) {
+                const responseDGS75 = await DGS75.json();
+                setGS75(responseDGS75.results)
+            }
         }   
         catch (error) {
-            console.log(error)
+            setErrorGS75(true)
         }
     }
 
     
 // fetch races, Starts and horse detail data 
 export const FetchDataDetail = async (setRaces, RacesID) => {
-    const DRaces = await fetch("https://www.atg.se/services/racinginfo/v1/api/games/" + RacesID);
-    const responseD1 = await DRaces.json();
-    setRaces(responseD1.races)
+        const DRaces = await fetch("https://www.atg.se/services/racinginfo/v1/api/games/" + RacesID);
+        const responseD1 = await DRaces.json();
+        setRaces(responseD1.races)
     }   
 
 
