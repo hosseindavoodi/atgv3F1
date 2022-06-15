@@ -13,7 +13,7 @@ export default function Results({dataset, error}) {
     {
       error ? <p>there is an error</p>
       :
-      dataset.map(maininfo =>(
+      dataset && dataset.map(maininfo =>(
         <div className="card" key={maininfo.id}>
           <div className="card-header">
             <a className="col-12 btn " data-bs-toggle="collapse" href={'#collapse' + maininfo.id}>

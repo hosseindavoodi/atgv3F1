@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Tab, Tabs as TabsComponent, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./App.scss";
 import Results from './components/Results';
-import {FetchDataV75, FetchDataV86, FetchDataGS75} from './components/Functions';
+//import {FetchDataV75, FetchDataV86, FetchDataGS75,} from './components/Functions';
+import useFetch from "./components/useFetch";
 
 
 export default function App() {
-const [resultsV75, setResultsV75] = useState([]);
-const [resultsV86, setResultsV86] = useState([]);
-const [resultsGS75, setResultsGS75] = useState([]);
-const [errorV75, setErrorV75] = useState(false)
-const [errorV86, setErrorV86] = useState(false)
-const [errorGS75, setErrorGS75] = useState(false)
-
-
-useEffect(()=>{
-  FetchDataV75(setResultsV75, setErrorV75);
-  FetchDataV86(setResultsV86, setErrorV86);
-  FetchDataGS75(setResultsGS75, setErrorGS75);
-},[])
+  const [resultsV75, errorV75] = useFetch("./V75.json");
+  const [resultsV86, errorV86] = useFetch("./V86.json");
+  const [resultsGS75, errorGS75] = useFetch("./GS75.json");
 
 
   return (

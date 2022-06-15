@@ -15,50 +15,6 @@ export const Rdate = (Timedate) => {
     return date;
 }  
 
-
-// fetch results data 
-//var url = "https://www.atg.se/services/racinginfo/v1/api/products/V75"
-
-export const FetchDataV75 = async (setV75, setErrorV75) => {
-        try {
-        const DV75 = await fetch("./V75.json");
-            if (DV75.status === 200) {
-                const responseDV75 = await DV75.json();
-                setV75(responseDV75.results)
-            }
-        }   
-        catch (error) {
-            setErrorV75(true)
-        }
-    }
-
-export const FetchDataV86 = async (setV86, setErrorV86) => {
-        try {
-            const DV86 = await fetch("./V86.json");
-            if (DV86.status === 200) {
-                const responseDV86 = await DV86.json();
-                setV86(responseDV86.results)
-            }
-        }   
-        catch (error) {
-            setErrorV86(true)
-        }
-    }
-
-
-export const FetchDataGS75 = async (setGS75, setErrorGS75) => {
-        try {
-                const DGS75 = await fetch("./GS75.json");
-            if (DGS75.status === 200) {
-                const responseDGS75 = await DGS75.json();
-                setGS75(responseDGS75.results)
-            }
-        }   
-        catch (error) {
-            setErrorGS75(true)
-        }
-    }
-
     
 // fetch races, Starts and horse detail data 
 export const FetchDataDetail = async (setRaces, RacesID) => {
