@@ -1,17 +1,17 @@
 
 import Races from './Races';
-import {Rtime, Rdate} from "./Functions";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {raceTime, raceDate} from "../utils/Functions";
+import './bootstrap/bootstrap.min.css';
 
 // Results list is created here by fetcheing from Api in App.js and passed here
 
-export default function Results({dataset, error}) {
+export default function Results({dataset}) {
   
   return (
     <>
     <div id="accordion">
     {
-      error ? <p>there is an error</p>
+      !dataset ? <p>there is no Data</p>
       :
       dataset && dataset.map(maininfo =>(
         <div className="card" key={maininfo.id}>
@@ -22,8 +22,8 @@ export default function Results({dataset, error}) {
             <div key={tr.id} className='float-left bold titleR'>{" - " + tr.name}</div> 
                 ))
               }
-            <div className='divA23 float-right'>Date: {Rdate(maininfo.startTime)}</div>  
-            <div className='divA23 float-right'>Time: {Rtime(maininfo.startTime)}</div>
+            <div className='divA23 float-right'>Date: {raceDate(maininfo.startTime)}</div>  
+            <div className='divA23 float-right'>Time: {raceTime(maininfo.startTime)}</div>
             </a>
           </div>
           <div id={'collapse' + maininfo.id} className="collapse" data-bs-parent="#accordion">
