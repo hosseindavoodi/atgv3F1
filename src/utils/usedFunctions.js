@@ -18,9 +18,14 @@ export const raceDate = (timeDate) => {
     
 // fetch races, Starts and horse detail data 
 export const FetchDataDetail = async (setRaces, racesID) => {
+    try {
         const request = await fetch("https://www.atg.se/services/racinginfo/v1/api/games/" + racesID);
         const response = await request.json();
         setRaces(response.races)
+    }
+    catch (error) {
+            console.log("there is an error")
+    }
     }   
 
 

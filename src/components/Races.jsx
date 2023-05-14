@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {FetchDataDetail} from '../utils/Functions'
+import {FetchDataDetail} from '../utils/usedFunctions'
 import Starts from './Starts';
-import { raceTime } from '../utils/Functions';
+import { raceTime } from '../utils/usedFunctions';
 
 export default function Races({RacesID}) {
 
@@ -31,7 +31,7 @@ export default function Races({RacesID}) {
               </div>
               <div id={'collapse' + item.id} className="collapse" data-bs-parent="#accordion1">
                 <div className="card-body">
-                <Starts races = {races} DID = {item.id} />
+                <Starts races = {races} itemID = {item.id} />
                 </div>
               </div>
             </div>

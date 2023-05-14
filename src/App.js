@@ -7,9 +7,9 @@ import useFetch from "./components/useFetch";
 
 
 export default function App() {
-  const [resultsV75] = useFetch("./V75.json");
-  const [resultsV86] = useFetch("./V86.json");
-  const [resultsGS75] = useFetch("./GS75.json");
+  const resultsV75 = useFetch("./V75.json");
+  const resultsV86 = useFetch("./V86.json");
+  const resultsGS75 = useFetch("./GS75.json");
 
 
   return (

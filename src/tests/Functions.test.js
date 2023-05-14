@@ -1,6 +1,6 @@
 
 
-import {raceTime, raceDate} from '../utils/Functions';
+import {raceTime, raceDate} from '../utils/usedFunctions';
 
 
 it('it should give the time', ()=>{

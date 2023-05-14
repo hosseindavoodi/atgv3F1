@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
-  const [error, setError] = useState(false);
 
   const fetchData = async (url) => {
     try {
@@ -12,7 +11,6 @@ const useFetch = (url) => {
         }
     catch (error) {
             console.log("there is an error")
-            setError(true)
     }
   }
 
@@ -20,7 +18,7 @@ const useFetch = (url) => {
     fetchData(url)
   }, [url]);
 
-  return [data, error];
+  return data;
 };
 
 export default useFetch;

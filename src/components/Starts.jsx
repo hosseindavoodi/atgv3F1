@@ -1,12 +1,12 @@
 
 
-export default function Starts({races, DID}) {
+export default function Starts({races, itemID}) {
     return (
         <>
         {
           races.map(param =>(
             param.starts.map(item=>{
-          return param.id === DID &&
+          return param.id === itemID &&
           <div id={'accordion2' + param.id} key={"b" + item.number}>
               <div className="card"  >
                 <div className="card-header">
